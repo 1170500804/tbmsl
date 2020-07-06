@@ -55,6 +55,11 @@ else:
         model_path = './checkpoint/aircraft'      # pth save path
         root = './datasets/FGVC-aircraft'  # dataset path
         num_classes = 100
+    elif set == 'Floor_Ele':
+        model_path = './checkpoint/floor_ele'
+        #TODO change root to the dataset path
+        root='./5001'
+        num_classes=22
 
 
 '''indice2coordinates'''

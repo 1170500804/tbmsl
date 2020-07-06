@@ -5,7 +5,11 @@ from networks import resnet
 from config import pretrain_path, coordinates_cat, iou_threshs, window_nums_sum, ratios, N_list
 import numpy as np
 from utils.AOLM import AOLM
-
+import os
+if not os.path.exists('./checkpoint'):
+    os.mkdir('./checkpoint')
+if not os.path.exists('./checkpoint/floor_ele'):
+    os.mkdir('./checkpoint/floor_ele')
 
 def nms(scores_np, proposalN, iou_threshs, coordinates):
     if not (type(scores_np).__module__ == 'numpy' and len(scores_np.shape) == 2 and scores_np.shape[1] == 1):
