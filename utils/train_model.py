@@ -78,8 +78,11 @@ def train(model,
             = eval(model, testloader, criterion, 'test', save_path, epoch)
 
         print(
-            'Test set: raw loss: {:.2f}%, local loss: {:.2f}%'.format(
+            'Test set: raw loss: {:.2f}, local loss: {:.2f}'.format(
                 raw_loss_avg, local_loss_avg))
+        print(
+            'Test set: raw accuracy: {:.2f}%, local accuracy: {:.2f}%'.format(
+                100. * raw_accuracy, 100. * local_accuracy))
 
         # tensorboard
         with SummaryWriter(log_dir=os.path.join(save_path, 'log'), comment='test') as writer:
