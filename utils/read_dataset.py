@@ -53,7 +53,7 @@ def read_dataset(input_size, batch_size, root, set, regression=False):
                 transforms.ToTensor(),
                 normalize])
         #TODO: change image folder
-        image_folder = '/home/liushuai/Streetview_Irma/images'
+        image_folder = ''
         train_data = 'elevation_train.csv'
         val_data = 'elevation_val.csv'
         train_dataset = Floor_Ele(train_data, image_folder, transform=train_transform,
